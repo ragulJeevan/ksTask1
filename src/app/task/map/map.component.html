@@ -1,0 +1,46 @@
+  <!--map-->
+    <div id="show_map"></div>
+    <!--list and form-->
+   <div class="my-4 container">
+    <div class="row">
+        <!--name and description grid-->
+        <div class="col-md-6">
+            <h1><b>List</b></h1>
+            <div class="card" *ngFor="let d of detail" (click)="populate()">
+                <div class="card-body" >
+                    <p> <b>{{d.placeName}}</b> </p>
+                    <p>{{d.formDescription}}</p>
+                    <p></p>
+                </div>
+            </div>
+        </div>
+        <!--name and description form-->
+        <div class="col-md-6 vl mt-5">
+            <form [formGroup]="mForm"  >
+                <div class="mb-3">
+                    <input type="text" class="form-control"  placeholder="Edit Name" name="placeName" formControlName="placeName">
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="mb-3">
+                            <input type="number" placeholder="Lattitude" class="form-control" name="latitude" formControlName="latitude">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="mb-3">
+                            <input type="number" placeholder="Longitude" class="form-control" name="longitude" formControlName="longitude">
+                        </div>
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <textarea name="description" id="controlDescritpion" placeholder="Edit Description" cols="30" rows="5" class="form-control" 
+                    name="formDescription" formControlName="formDescription"></textarea>
+                </div>
+                <div class="mb-3  text-center" >
+                <button class="btn btn-primary" (click)="update()" >Update</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+   </div>

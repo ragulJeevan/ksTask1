@@ -1,0 +1,15 @@
+<div class="col-md mt-5">
+    <form [formGroup]="dForm"  >
+        <div class="mb-3">
+            <input type="text" class="form-control"  placeholder="Edit Name" name="placeName" formControlName="placeName">
+        </div>
+        <div class="mb-3">
+            <textarea name="description" id="controlDescritpion" placeholder="Edit Description" cols="30" rows="5" class="form-control" 
+            name="formDescription" formControlName="formDescription"></textarea>
+        </div>
+        <div class="mb-3  text-center" >
+            <button mat-button [mat-dialog-close]="true" class="btn btn-primary" (click)="save()">Save</button>
+
+        </div>
+    </form>
+</div>
